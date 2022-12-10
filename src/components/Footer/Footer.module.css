@@ -1,0 +1,14 @@
+ .footer {
+      grid-area: footer;
+      padding: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(78, 80, 207, 0.6);
+ }
+
+ .footer__mark{
+      font-style: italic;
+      font-size: 12px;
+      color:whitesmoke;
+ }

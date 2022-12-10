@@ -1,0 +1,7 @@
+  .newPost{
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      justify-items: center;
+      align-items: center;
+  }

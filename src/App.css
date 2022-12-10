@@ -1,0 +1,62 @@
+  /* style of start*/
+  * {
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+
+  ;
+
+  *,
+  *:before,
+  *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  :focus,
+  :active {
+    outline: none;
+  }
+
+  a:focus,
+  a:active {
+    outline: none;
+  }
+
+  nav,
+  footer,
+  header,
+  aside {
+    display: block;
+  }
+
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /*main style*/
+  .app-wrapper {
+    display: grid;
+    grid-template-areas:
+      "header header header"
+      "sideBar mainBlock mainBlock"
+      "footer footer footer";
+    grid-gap: 1px;
+    grid-template-columns: 100px 1fr 1fr;
+    grid-template-rows: 100px 10fr 0.5fr;
+  }
+
+  .app-wrapper-content {
+    grid-area: mainBlock;
+    background-color: rgb(51, 184, 184);
+  }

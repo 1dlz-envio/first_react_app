@@ -1,0 +1,32 @@
+.dialogs{
+      width: 90vw;
+      height: 80vh;
+
+      display: grid;
+      grid-template-columns: 2fr 8fr;
+}
+
+.dialogsItem{
+      list-style-type: none;
+      padding: 10px;
+      background: rgb(224, 132, 11);
+      
+}
+
+.item{
+      padding: 10px 0;
+      border-radius: 10px;
+      border: 1px solid black;
+      margin-bottom: 3px;
+}
+
+.userItem{
+      margin: 2px;
+      text-decoration: none;
+      color: black;
+}
+
+.active{
+      text-align: center;
+      letter-spacing: 1.5px;
+}

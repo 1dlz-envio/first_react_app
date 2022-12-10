@@ -1,0 +1,37 @@
+.sideBar {
+      grid-area: sideBar;
+      background: rgb(102, 187, 187);
+}
+
+.sideBar__settings {
+      margin-top: 20px;
+}
+
+.navBar{
+      padding: 5px;
+}
+
+.itemColumn{
+      display: flex;
+      flex-direction: column;
+      list-style-type: none;
+}
+
+.item{
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 1px;
+
+      text-decoration: none;
+      margin-top: 10px;
+}
+
+.itemLink {
+      font-size: 400;
+      letter-spacing: 1px;
+      color: white;
+}
+
+.active {
+      color:rgb(3, 3, 3);
+}
