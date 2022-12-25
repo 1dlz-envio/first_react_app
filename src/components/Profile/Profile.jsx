@@ -3,12 +3,16 @@ import MyPosts from './MyPosts/MyPosts';
 import classes from './Profile.module.css'
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 
+const Profile = (props) => {
 
-const Profile = () => {
       return (
             <main className={classes.mainBlock}>
-                  <ProfileInfo/>
-                  <MyPosts/>  
+                  <ProfileInfo />
+                  <MyPosts postsData={props.profilePage.postsData}
+                        publicPost={props.publicPost}
+                        newPostText={props.profilePage.newPostText}
+                        updateNewPostText={props.updateNewPostText}
+                  />
             </main>
       )
 }

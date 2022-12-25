@@ -1,32 +1,73 @@
-.dialogs{
-      width: 90vw;
-      height: 80vh;
+.dialogs {
+      width: 100%;
+      height: 100%;
 
       display: grid;
       grid-template-columns: 2fr 8fr;
+      overflow: hidden;
 }
 
-.dialogsItem{
+.dialogsItem {
       list-style-type: none;
       padding: 10px;
       background: rgb(224, 132, 11);
-      
+      height: 100%;
+
 }
 
-.item{
+.item {
       padding: 10px 0;
       border-radius: 10px;
       border: 1px solid black;
       margin-bottom: 3px;
 }
 
-.userItem{
+
+.userItem {
       margin: 2px;
       text-decoration: none;
       color: black;
+
 }
 
-.active{
+.active {
       text-align: center;
       letter-spacing: 1.5px;
+}
+
+.massages {
+      display: flex;
+      flex-direction: column;
+      height: 100%
+}
+
+.massagesElementItems {
+      flex-grow: 1;
+      flex-shrink: 1;
+      
+}
+
+.newMassage {
+      width: 100%;
+      height: 100px;
+      padding-top: 5px;
+      background: rgb(192, 168, 168);
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+}
+
+.newMassage__text{
+      width: 50vw;
+      height: 95px;
+      resize: none;
+      margin: 0 5px;
+}
+
+.newMassage__btn{
+      padding: 5px 10px;
+      font-size: 16px;
+      color:black;
+      letter-spacing: 1,5px;
+      height: 95px;
 }
