@@ -1,0 +1,34 @@
+.friendsBlock__unit {
+      margin-top: 5px;
+}
+
+.friendsBlock__link {
+      display: flex;
+      flex-direction: column;
+      margin: 5px 0;
+
+}
+
+.friendsBlock__logoBox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+
+}
+
+.logoBox__img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+}
+
+.friendsBlock__nameOfFriend {
+      display: block;
+      margin-top: 4px;
+      text-align: center;
+      color: black;
+      font-size: 14;
+      font-weight: 600;
+}

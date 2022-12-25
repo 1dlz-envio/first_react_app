@@ -1,8 +1,9 @@
 import React from 'react';
 import classes from './SideBar.module.css'
 import { NavLink } from 'react-router-dom';
+import FriendsBlock from './FriendsBlock/FriendsBlock';
 
-const Dialogs = () => {
+const Dialogs = (props) => {
       return (
             <aside className={classes.sideBar}>
                   <nav className={classes.navBar}>
@@ -24,6 +25,7 @@ const Dialogs = () => {
                               <NavLink to='/settings' className={navData => navData.isActive ? classes.active : classes.item}>Settings</NavLink>
                         </div>
                   </nav>
+                  <FriendsBlock dialogsPage={props.dialogsPage}/>
             </aside>
       )
 }

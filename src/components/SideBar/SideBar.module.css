@@ -1,23 +1,25 @@
 .sideBar {
       grid-area: sideBar;
       background: rgb(102, 187, 187);
+      display: flex;
+      flex-direction: column;
 }
 
 .sideBar__settings {
       margin-top: 20px;
 }
 
-.navBar{
+.navBar {
       padding: 5px;
 }
 
-.itemColumn{
+.itemColumn {
       display: flex;
       flex-direction: column;
       list-style-type: none;
 }
 
-.item{
+.item {
       font-size: 16px;
       font-weight: 600;
       letter-spacing: 1px;
@@ -33,5 +35,5 @@
 }
 
 .active {
-      color:rgb(3, 3, 3);
+      color: rgb(3, 3, 3);
 }

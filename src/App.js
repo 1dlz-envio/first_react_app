@@ -7,23 +7,25 @@ import Profile from './components/Profile/Profile.jsx';
 import SideBar from './components/SideBar/SideBar.jsx';
 import News from './components/News/News.jsx';
 import Music from './components/Music/Music.jsx';
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Settings from './components/Settings/Settings.jsx';
 
-
-const App = () => {
+const App = (props) => {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
-        <SideBar />
+        <SideBar dialogsPage={props.state.dialogsPage} />
         <div className="app-wrapper-content">
           <Routes>
-            <Route path='/profile' element={<Profile />} />
-            <Route path='/dialogs' element={<Dialogs />} />
-            <Route path='/news' element={<News/>} />
+            <Route path='/profile' element={<Profile profilePage={props.state.profilePage}
+              publicPost={props.publicPost}
+              updateNewPostText={props.updateNewPostText}
+            />} />
+            <Route path='/dialogs/*' element={<Dialogs dialogsPage={props.state.dialogsPage} />} />
+            <Route path='/news' element={<News />} />
             <Route path='/music' element={<Music />} />
-            <Route path='/settings' element={<Settings/>} />
+            <Route path='/settings' element={<Settings />} />
           </Routes>
         </div>
         <Footer />

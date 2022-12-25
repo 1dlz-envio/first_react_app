@@ -1,0 +1,20 @@
+.friendsBlock {
+      display: block;
+      margin-top: 15px;
+
+      padding: 5px;
+}
+
+.friendsBlock__title {
+      font-size: 14;
+      color: brown;
+      letter-spacing: 1.2px;
+}
+
+.friendsBlock__items {
+      list-style-type: none;
+      display: flex;
+      flex-direction:column;
+      align-items: center;
+      margin-top: 5px;
+}

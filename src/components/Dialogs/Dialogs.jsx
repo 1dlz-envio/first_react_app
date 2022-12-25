@@ -2,10 +2,13 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import classes from './Dialogs.module.css';
 
+
+
 const DialogsItem = (props) => {
 
-      let path =  '/dialogs/' + props.id ;
-      
+
+      let path = '/dialogs/' + props.id;
+
       return (
             <li className={classes.item}>
                   <NavLink to={path} className={classes.userItem}>{props.name}</NavLink>
@@ -20,21 +23,38 @@ const Massage = (props) => {
 }
 
 const Dialogs = (props) => {
+
+      let dialogsItem = props.dialogsPage.dialogsData
+            .map(dialog => <DialogsItem id={dialog.id} name={dialog.name} />);
+
+
+      let massageElements = props.dialogsPage.massagesData
+            .map(massage => <Massage massage={massage.massage} />);
+
+      // create link to text massage
+      let sentMassageText = React.createRef();
+
+      // action of sent text new masage
+      let sentMassageBtn = () => {
+            let newMassageText = sentMassageText.current.value;
+            alert(newMassageText);
+      }
+
       return (
             <div className={classes.dialogs}>
                   <ul className={classes.dialogsItem}>
-                        <DialogsItem id='1' name = 'Igor'/>
-                        <DialogsItem id='2' name ='Klark' />
-                        <DialogsItem id='3' name ='Vlad' />
-                        <DialogsItem id='4' name ='Fred' />
-                        <DialogsItem id='5' name ='Brok' />
-                        
+                        {dialogsItem}
                   </ul>
-                  <div className="massages">
-                        <Massage massage='Hello world!' />
-                        <Massage massage='How are you?' />
-                        <Massage massage='I`m OK' />
+                  <div className={classes.massages}>
+                        <ul className={classes.massagesElementItems}>
+                              {massageElements}
+                        </ul>
+                        <div className={classes.newMassage}>
+                              <textarea ref={sentMassageText} className={classes.newMassage__text}></textarea>
+                              <button onClick={sentMassageBtn} className={classes.newMassage__btn}>Send</button>
+                        </div>
                   </div>
+
             </div>
       )
 }
