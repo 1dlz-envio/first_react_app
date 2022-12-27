@@ -38,36 +38,42 @@
 .massages {
       display: flex;
       flex-direction: column;
-      height: 100%
+
+
 }
 
 .massagesElementItems {
+      display: flex;
+      flex-direction: column;
       flex-grow: 1;
       flex-shrink: 1;
-      
+      height: 100%;
+
 }
 
-.newMassage {
-      width: 100%;
-      height: 100px;
-      padding-top: 5px;
-      background: rgb(192, 168, 168);
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-}
+.massage__text {
+      display: inline-block;
+      width: fit-content;
+      margin: 5px 0 5px 15px;
+      padding: 8px;
 
-.newMassage__text{
-      width: 50vw;
-      height: 95px;
-      resize: none;
-      margin: 0 5px;
-}
+      position: relative;
 
-.newMassage__btn{
-      padding: 5px 10px;
+      background: white;
+      border-radius: 4px 4px 4px 0px;
+      color: black;
       font-size: 16px;
-      color:black;
-      letter-spacing: 1,5px;
-      height: 95px;
+      letter-spacing: 1.25px;
+}
+
+.massage__text:before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      bottom: 0px;
+
+      width: 0;
+      height: 0;
+      border-bottom: 10px solid white;
+      border-left: 10px solid transparent;
 }
