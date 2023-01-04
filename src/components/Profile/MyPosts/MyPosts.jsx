@@ -4,7 +4,7 @@ import Post from './Post/Post.jsx';
 
 
 const MyPosts = (props) => {
-
+      debugger;
       let postsItem = props.postsData.map(post => <Post massages={post.postMassages} likesCount={post.likeCount} />);
 
       // create link into textarea 
@@ -14,19 +14,22 @@ const MyPosts = (props) => {
       let addPost = () => {
 
             // put value from textarea to alert massage
-            props.publicPost();
+            props.dispatch({ type: 'PUBLIC-POST' });
 
       };
 
       // send input sumbols into STATE
 
       let onPostChange = () => {
+
             let text = newPostElement.current.value;
-            props.updateNewPostText(text);
+            props.dispatch({
+                  type: 'UPDATE-NEW-POST-TEXT',
+                  newText: text,
+            });
 
 
       }
-
 
       return (
             <div>
