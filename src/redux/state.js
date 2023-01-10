@@ -36,44 +36,6 @@ let store = {
             return this._state;
       },
 
-
-      //start of function area of posting
-
-      // //function of public  new post on the profile wall
-      // publicPost() {
-      //       let newPost = {
-      //             id: 5,
-      //             postMassage: this._state.profilePage.newPostText,
-      //             likeCount: 0,
-      //       };
-      //       this._state.profilePage.postsData.push(newPost);
-      //       this._state.profilePage.newPostText = '';
-      //       this._callSubscriber(this._state);
-      // },
-
-      // //export typing sumpols in textarea into state.js 
-      // updateNewPostText(newText) {
-      //       this._state.profilePage.newPostText = newText;
-      //       this._callSubscriber(this._state);
-      // },
-
-      //end of funtion area of posting
-
-      publicMassage() {
-            let newMassage = {
-                  id: 4,
-                  massage: this._state.dialogsPage.newMassageText,
-            };
-            this._state.dialogsPage.massagesData.push(newMassage);
-            this._state.dialogsPage.newMassageText = '';
-            this._callSubscriber(this._state);
-      },
-
-      updateNewMassageText(massage) {
-            this._state.dialogsPage.newMassageText = massage;
-            this._callSubscriber(this._state);
-      },
-
       subscribe(observer) {
             this._callSubscriber = observer; // observer
       },
@@ -83,7 +45,7 @@ let store = {
             if (action.type === 'PUBLIC-POST') {
                   let newPost = {
                         id: 5,
-                        postMassage: this._state.profilePage.newPostText,
+                        postMassages: this._state.profilePage.newPostText,
                         likeCount: 0,
                   };
                   this._state.profilePage.postsData.push(newPost);
@@ -92,9 +54,27 @@ let store = {
             } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
                   this._state.profilePage.newPostText = action.newText;
                   this._callSubscriber(this._state);
+            } else if (action.type === 'UPDATE-NEW-MASSAGE-TEXT') {
+                  this._state.dialogsPage.newMassageText = action.massage;
+                  this._callSubscriber(this._state);
+            } else if (action.type === 'PUBLIC-MASSAGE') {
+                  let newMassage = {
+                        id: 4,
+                        massage: this._state.dialogsPage.newMassageText,
+                  };
+                  this._state.dialogsPage.massagesData.push(newMassage);
+                  this._state.dialogsPage.newMassageText = '';
+                  this._callSubscriber(this._state);
             }
       },
 }
+
+export const addPostActionCreator = () => ({ type: 'PUBLIC-POST', });
+
+export const updateNewPostTextActionCreator = (text) => ({
+      type: 'UPDATE-NEW-POST-TEXT',
+      newText: text,
+});
 
 export default store;
 

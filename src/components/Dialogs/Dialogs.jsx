@@ -44,8 +44,7 @@ const Dialogs = (props) => {
                               {massageElements}
                         </ul>
                         <NewMassage dialogsPage={props.dialogsPage}
-                              publicMassage={props.publicMassage}
-                              updateNewMassageText={props.updateNewMassageText}
+                              dispatch={props.dispatch}
                         />
                   </div>
 

@@ -1,6 +1,8 @@
 import React from 'react';
 import classes from './MyPosts.module.css';
 import Post from './Post/Post.jsx';
+import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/state';
+
 
 
 const MyPosts = (props) => {
@@ -14,7 +16,7 @@ const MyPosts = (props) => {
       let addPost = () => {
 
             // put value from textarea to alert massage
-            props.dispatch({ type: 'PUBLIC-POST' });
+            props.dispatch(addPostActionCreator());
 
       };
 
@@ -23,10 +25,7 @@ const MyPosts = (props) => {
       let onPostChange = () => {
 
             let text = newPostElement.current.value;
-            props.dispatch({
-                  type: 'UPDATE-NEW-POST-TEXT',
-                  newText: text,
-            });
+            props.dispatch(updateNewPostTextActionCreator(text));
 
 
       }
