@@ -8,13 +8,13 @@ const NewMassage = (props) => {
 
       // action of sent text new masage
       let addMassage = () => {
-            props.publicMassage();
+            props.dispatch({ type: 'PUBLIC-MASSAGE' });
       }
 
       //action of send typing sumbols into state.js
       let onMassageChange = () => {
             let massage = sentMassageText.current.value;
-            props.updateNewMassageText(massage);
+            props.dispatch({ type: 'UPDATE-NEW-MASSAGE-TEXT', massage: massage });
       }
 
       return (
