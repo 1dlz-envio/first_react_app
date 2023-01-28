@@ -1,22 +1,19 @@
 import React from 'react';
 import classes from './MyPosts.module.css';
 import Post from './Post/Post.jsx';
-import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/state';
 
 
 
 const MyPosts = (props) => {
       debugger;
-      let postsItem = props.postsData.map(post => <Post massages={post.postMassages} likesCount={post.likeCount} />);
+      let postsItem = props.posts.map(post => <Post massages={post.postMassages} likesCount={post.likeCount} />);
 
       // create link into textarea 
       let newPostElement = React.createRef();
 
       // function of action after you press publicPost button
-      let addPost = () => {
-
-            // put value from textarea to alert massage
-            props.dispatch(addPostActionCreator());
+      let onAddPost = () => {
+            props.addPost();
 
       };
 
@@ -25,8 +22,7 @@ const MyPosts = (props) => {
       let onPostChange = () => {
 
             let text = newPostElement.current.value;
-            props.dispatch(updateNewPostTextActionCreator(text));
-
+            props.updateNewPostText(text);
 
       }
 
@@ -39,7 +35,7 @@ const MyPosts = (props) => {
                               className={classes.newPostMassage}
                               value={props.newPostText}
                         />
-                        <button onClick={addPost} className={classes.newPostButton}>Add Post</button>
+                        <button onClick={onAddPost} className={classes.newPostButton}>Add Post</button>
                   </div>
                   {postsItem}
             </div>

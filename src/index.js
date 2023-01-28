@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import store from './redux/state.js';
+import store from './redux/storeRedux.js';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -14,6 +14,8 @@ let rerenderEntireTree = (state) => {
             <React.StrictMode>
                   <App state={store.getState()}
                         dispatch={store.dispatch.bind(store)}
+                        store = {store}
+                  
                         // publicMassage={store.publicMassage.bind(store)}
                         // updateNewMassageText={store.updateNewMassageText.bind(store) }
                   />
