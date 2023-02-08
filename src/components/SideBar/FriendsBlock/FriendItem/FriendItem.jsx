@@ -5,7 +5,7 @@ import classes from './FriendItem.module.css';
 const FriendItem = (props) => {
 
       let path = '/dialog/' + props.id;
-
+      debugger;
       return (
             <li className={classes.friendsBlock__unit}>
                   <NavLink to={path} className={classes.friendsBlock__link}>

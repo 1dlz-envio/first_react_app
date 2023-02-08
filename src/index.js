@@ -4,21 +4,17 @@ import store from './redux/storeRedux.js';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-let rerenderEntireTree = (state) => {
-
+let rerenderEntireTree = () => {
       root.render(
             <React.StrictMode>
-                  <App state={store.getState()}
-                        dispatch={store.dispatch.bind(store)}
-                        store = {store}
-                  
-                        // publicMassage={store.publicMassage.bind(store)}
-                        // updateNewMassageText={store.updateNewMassageText.bind(store) }
-                  />
+                  <Provider store={store} >
+                        <App />
+                  </Provider>
             </React.StrictMode>
       );
 }
